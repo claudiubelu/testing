@@ -1,4 +1,5 @@
 import abc
+import json
 
 from testing import rpc_utils
 from testing import config
@@ -26,8 +27,12 @@ class HelloBase(object):
 
 class HelloRPCAPI(HelloBase):
 
-    def hello(self, foo, bar):
-        self._publish('hi')
+    def hello(self, *args, **kwargs):
+        message = {
+            'method': 'hello',
+            'args': args,
+            'kwargs': kwargs}
+        self._publish(json.dumps(message))
 
     def _publish(self, body):
         print(" [x] Sending '%r'" % body)
@@ -44,6 +49,19 @@ class HelloRPCEndpoint(HelloBase):
 
     def _callback(self, ch, method, properties, body):
         print(" [x] Received %r" % body)
+        message = json.loads(body)
+        method_name = message.get('method')
+        args = message.get('args', [])
+        kwargs = message.get('kwargs', {})
+
+        try:
+            getattr(self, method_name)(*args, **kwargs)
+        except AttributeError:
+            print "Method %s does not exist." % method_name
+        except TypeError:
+            print "Method %s signature not respected." % method_name
+        except Exception:
+            print "shit happened. sorry bro."
 
     def start_consuming(self):
         print(' [*] Waiting for messages. To exit press CTRL+C')
