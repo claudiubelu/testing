@@ -9,8 +9,10 @@ class Sobolan(object):
         super(Sobolan, self).__init__()
         self._name = name
 
-    def chitz_chitz(self):
-        print("Chitz chitz! Unde-mi branzu' lu' %s?" % self._name)
+    def chitz_chitz(self, times):
+	times = times or 1
+	for i in range(times):
+	        print("Chitz chitz! Unde-mi branzu' lu' %s?" % self._name)
 
     def __mul__(self, tata):
         new_name = "%s%s" % (
