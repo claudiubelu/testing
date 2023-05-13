@@ -1,0 +1,14 @@
+[Star Platinum's birthday]
+description = "It's that time of year, folks! It's the date in which Star Platinum has awoken to its standing against The World!"
+date = "1989-04-01 11:00:00"
+location = "Tokyo"
+
+[Dio takes over The World]
+description = "It's the final countdown to facing off the Joestars once and for all! Without them, no one will Stand against him!"
+date = "1989-06-10 03:00:00"
+location = "Cairo"
+
+[Gigi Petrolieru's birthday bash]
+description = "There's no day like a birthday! And there's no Gigi like Gigi Petrolieru'! So, what's the perfect scenario ever imaginable? The extravagance of this event exceeds any reptilian ezoterism!"
+date = "2023-05-15 06:06:06"
+location = "Teamisoara"
