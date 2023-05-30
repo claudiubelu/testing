@@ -1,5 +1,6 @@
 CHANGES
 =======
 
+* Adds requirements.txt and pika as a requirement
 * Updates Python setup to use pbr
 * Initial cookiecutter template commit
