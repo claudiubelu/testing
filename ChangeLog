@@ -1,0 +1,5 @@
+CHANGES
+=======
+
+* Updates Python setup to use pbr
+* Initial cookiecutter template commit
