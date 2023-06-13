@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* Adds containerization process for the application
 * Adds fibonacci RPC implementation
 * Adds requirements.txt and pika as a requirement
 * Updates Python setup to use pbr
