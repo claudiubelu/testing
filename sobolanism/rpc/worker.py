@@ -43,7 +43,7 @@ class RPCWorker:
         # Send the reply back to the original caller.
         reply_props = pika.BasicProperties(correlation_id=props.correlation_id)
         self._chan.basic_publish(
-            exchange="",
+            excange="",
             routing_key=props.reply_to,
             properties=reply_props,
             body=json.dumps(result),
