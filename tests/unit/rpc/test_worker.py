@@ -41,7 +41,7 @@ class TestWorker(unittest.TestCase):
         expected_body_dict = {"result": something}
         expected_body = json.dumps(expected_body_dict)
         self._worker._chan.basic_publish.assert_called_once_with(
-            excange="",
+            exchange="",
             routing_key=mock_props.reply_to,
             properties=mock_BasicProperties.return_value,
             body=expected_body,
@@ -65,7 +65,7 @@ class TestWorker(unittest.TestCase):
         expected_body_dict = {"error": str(exc)}
         expected_body = json.dumps(expected_body_dict)
         self._worker._chan.basic_publish.assert_called_once_with(
-            excange="",
+            exchange="",
             routing_key=mock_props.reply_to,
             properties=mock.ANY,  # We don't particularly care about the properties given.
             body=expected_body,
